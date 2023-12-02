@@ -13,13 +13,13 @@ function App() {
     // For this example, it just checks if username and password are not empty
     if (username === 'Ragunath' && password === 'Ragunath@2003') {
       setLoggedIn(true);
-      alert('Logged in successfully!');
+      // alert('Logged in successfully!');
     } else {
-      alert(`Please enter valid username and password.${count}`);
+      // alert(`Please enter valid username and password.${count}`);
       setCount(count+1)
-      // if(count==3){
-        
-      // }
+      setUsername('');
+    setPassword('');
+      
     }
   };
 
@@ -39,7 +39,7 @@ function App() {
   } else if (count>=3){
     return<div>
         <h1>sorry!</h1>
-        <button >password reset</button>
+        <button>password reset</button>
       </div>
   }
   else {
@@ -61,6 +61,8 @@ function App() {
         />
         <br />
         <button onClick={handleLogin}>Login</button>
+        <div>{count!==0?`attempt no.${count}`:""} </div>
+        
       </div>
     );
   }
